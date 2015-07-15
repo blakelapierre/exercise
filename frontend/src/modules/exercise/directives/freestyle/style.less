@@ -18,10 +18,34 @@ freestyle {
   }
 
   .overview {
-    .bar {
-      background-color: #ff0;
+    .stat {
+      display: flex;
 
-      transition: all 0.5s ease-out;
+      margin: 0 0.25em;
+
+      .name {
+        width: 5em;
+
+        font-weight: bold;
+
+        word-wrap: break-word;
+      }
+
+      .bar {
+        margin: 1px;
+        background-color: #ff0;
+
+        transition: all 0.5s ease-out;
+      }
+
+      .count {
+        margin-left: 0.5em;
+
+        font-size: 1.25em;
+        line-height: 1em;
+
+        font-weight: bold;
+      }
     }
   }
 
