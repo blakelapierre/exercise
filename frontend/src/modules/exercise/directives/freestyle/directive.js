@@ -59,6 +59,8 @@ module.exports = () => ({
       ops.map(op => op(item));
 
       activities.unshift(item);
+
+      if (activities.length > 5) activities.pop();
     }
   }]
 });
