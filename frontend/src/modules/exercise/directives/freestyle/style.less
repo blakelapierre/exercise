@@ -1,3 +1,31 @@
+@keyframes float-up {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  25% {
+    transform: translateX(0.5em) translateY(-0.66em);
+  }
+  50% {
+    transform: translateX(0em) translateY(-1.32em);
+  }
+  75% {
+    transform: translateX(-0.5em) translateY(-1.98em);
+  }
+  100% {
+    transform: translateX(0) translateY(-2.64em);
+  }
+}
+
+.loop-anim(@segments, @index: 0) when (@index <= @segments) {
+  .loop-anim(@segments, @index + 1);
+
+  // (@index / @segments) { transform: translateY((-@index)em); }
+}
+
+@keyframes loop-anim {
+  .loop-anim(10)
+}
+
 freestyle {
   display: flex;
   // flex-direction: column;
@@ -54,7 +82,7 @@ freestyle {
 
     flex-wrap: wrap;
 
-    justify-content: center;
+    justify-content: space-between;
 
     flex: 1 0 auto;
 
@@ -67,8 +95,11 @@ freestyle {
     }
 
     .exercise {
-      padding: 1em;
-      margin: 1em;
+      display: flex;
+      flex-direction: column;
+
+      justify-content: center;
+      align-items: center;
 
       font-size: 2em;
 
@@ -76,9 +107,52 @@ freestyle {
 
       border: solid 1px #aaa;
 
-      &:hover {
-        background-color: rgba(255, 255, 255, 0.8);
-        color: #000;
+      .quantities {
+        display: flex;
+
+        font-size: 0.75em;
+
+        .quantity {
+          padding: 0.5em;
+
+          flex: 1 1 auto;
+
+          &:hover {
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #000;
+          }
+
+          .value {
+            position: relative;
+
+            .balloon-box {
+              position: absolute;
+
+              top: 0;
+              left: 0;
+
+              .balloon {
+                position: absolute;
+
+                height: 1em;
+                width: 10em;
+
+                top: -2em;
+
+                overflow: visible;
+
+                font-size: 1.25em;
+                font-weight: bold;
+
+                color: #6f6;
+                text-shadow: 0 0 2px #333;
+
+                animation: float-up 1.5s linear;
+                animation-fill-mode: forwards;
+              }
+            }
+          }
+        }
       }
     }
   }

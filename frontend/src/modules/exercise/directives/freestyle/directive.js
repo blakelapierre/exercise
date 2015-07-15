@@ -1,13 +1,25 @@
 module.exports = () => ({
   restrict: 'E',
   template: require('./template.html'),
-  controller: ['$scope', 'dataStore', ($scope, dataStore) => {
+  controller: ['$scope', '$timeout', 'dataStore', ($scope, $timeout, dataStore) => {
     $scope.exercises = dataStore.getExercises();
     $scope.activities = [];
 
-    $scope.click = exercise => {
+    $scope.plusOneBalloons = {};
+
+    $scope.click = (exercise, count = 1) => {
       console.log(exercise);
-      add(exercise);
+
+      const {plusOneBalloons} = $scope;
+
+      const e = plusOneBalloons[exercise.name] = plusOneBalloons[exercise.name] || {},
+            balloons = e[count] = e[count] || [];
+
+      balloons.push({created: new Date()});
+
+      $timeout(() => balloons.shift(), 1250);
+
+      while (count-- > 0) add(exercise);
     };
 
     $scope.analysis = {

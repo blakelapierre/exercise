@@ -3,17 +3,43 @@
     {{misc.total}}
     <div ng-repeat="stat in analysis.stats"
          class="stat">
-      <div class="name">{{stat.exercise.name}}</div>
-      <div class="bar" ng-style="{'width': (100 * stat.count / analysis.total)+ '%'}">&nbsp;</div>
-      <div class="count">{{stat.count}}</div>
+      <span class="name">{{stat.exercise.name}}</span>
+      <span class="bar" ng-style="{'width': (100 * stat.count / analysis.total)+ '%'}">&nbsp;</span>
+      <span class="count">{{stat.count}}</span>
     </div>
   </div>
 
   <div class="exercises">
     <div ng-repeat="exercise in exercises">
       <div class="exercise"
-           ng-click="click(exercise)">
-      {{exercise.name}}
+           ng-click="click(exercise);$event.stopPropagation()">
+        <span class="name">{{exercise.name}}</span>
+        <div class="quantities">
+          <div class="quantity" ng-click="click(exercise);$event.stopPropagation()">
+            <div class="value">
+              <span>+1</span>
+              <div class="balloon-box">
+                <div class="balloon" ng-repeat="balloon in plusOneBalloons[exercise.name][1]">+1 {{exercise.name}}!</div>
+              </div>
+            </div>
+          </div>
+          <div class="quantity" ng-click="click(exercise, 5);$event.stopPropagation()">
+            <div class="value">
+              <span>+5</span>
+              <div class="balloon-box">
+                <div class="balloon" ng-repeat="balloon in plusOneBalloons[exercise.name][5]">+5 {{exercise.name}}!</div>
+              </div>
+            </div>
+          </div>
+          <div class="quantity" ng-click="click(exercise, 10);$event.stopPropagation()">
+            <div class="value">
+              <span>+10</span>
+              <div class="balloon-box">
+                <span class="balloon" ng-repeat="balloon in plusOneBalloons[exercise.name][10]">+10 {{exercise.name}}!</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -21,6 +47,6 @@
 
 <div class="activities">
   <div ng-repeat="activity in activities">
-    {{activity.exercise.name}}
+    <span class="name">{{activity.exercise.name}}</span>
   </div>
 </div>
