@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  padding: 0;
+
+  background-color: #000;
+  color: #fff;
+
+  overflow: hidden;
+
+  width: 100%;
+  height: 100%;
+
+  // font-family: 'Palanquin', sans-serif;
+  font-family: 'Rajdhani', sans-serif;
+  // font-family: 'Halant', sans-serif;
+  // font-family: 'Sahitya', sans-serif;
+  // font-family: 'Biryani', sans-serif;
+  // font-family: 'Amaranth', sans-serif;
+  // font-family: 'Roboto Monom', sans-serif;
+}
+
+a,
+a:visited {
+  color: #ccc;
+}
+
+.view {
+  display: flex;
+  position: fixed;
+
+  width: 100%;
+  height: 100%;
+
+  &.ng-enter,
+  &.ng-leave {
+    transition: all 0.33s ease-in-out;
+
+    position: absolute;
+  }
+
+  &.ng-enter {
+    transform: translateX(100%);
+  }
+
+  &.ng-leave {
+    transform: translateX(0%);
+  }
+
+  &.ng-enter.ng-enter-active {
+    transform: translateX(0%);
+  }
+
+  &.ng-leave.ng-leave-active {
+    transform: translateX(-100%);
+  }
+}

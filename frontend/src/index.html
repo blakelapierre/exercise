@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html ng-app="base-angular">
+<html ng-app="exercise">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Base Angular ES6 Project</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <title>Exercise</title>
 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href='http://fonts.googleapis.com/css?family=Rajdhani:300,400,500,700|Halant:400,700|Sahitya:400,700|Biryani:400,900|Amaranth:400,700|Roboto+Mono:400,700|Palanquin:400,600,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="app.css">
   </head>
   <body>
-    <hello-world spinner center></hello-world>
+    <ng-view class="view"></ng-view>
 
     <script src="vendor.js"></script>
     <script src="app.js"></script>

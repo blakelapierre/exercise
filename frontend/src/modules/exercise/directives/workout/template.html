@@ -1,0 +1,13 @@
+<div class="stage">
+  <button ng-click="prevExercise()">Previous Exercise</button>
+  <player exercise="exercise" current-task="currentTask"></player>
+  <button ng-click="nextExercise()">Next Exercise</button>
+</div>
+<div class="sidebar">
+  <div class="workout">
+    <div class="name">{{::workout.name}}</div>
+    <div class="description">{{::workout.description}}</div>
+  </div>
+
+  <exercise-list workout="workout" current-index="exerciseIndex"></exercise-list>
+</div>

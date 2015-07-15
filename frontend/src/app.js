@@ -1,5 +1,5 @@
-import baseAngular from './modules/base-angular';
+import exercise from './modules/exercise';
 
 module.exports = {
-  'base-angular': baseAngular['base-angular']
+  'exercise': exercise['exercise']
 };

@@ -1,0 +1,44 @@
+workout {
+  display: flex;
+
+  flex: 1 1 auto;
+
+  .stage {
+    display: flex;
+    flex-direction: column;
+
+    flex: 1 1 auto;
+
+    player {
+      flex: 1 1 auto;
+    }
+  }
+
+  .sidebar {
+    flex: 0 0 auto;
+
+    display: flex;
+    flex-direction: column;
+
+    font-size: 0.9em;
+
+    .workout {
+      margin-left: 1em;
+
+      .name {
+        font-size: 2em;
+        font-weight: bold;
+      }
+
+      .description {
+        font-size: 1.5em;
+      }
+    }
+
+    exercise-list {
+      flex: 0 0 auto;
+
+      margin: 0 1em;
+    }
+  }
+}

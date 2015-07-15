@@ -1,0 +1,6 @@
+<div class="exercises">
+  <div ng-repeat="(index, exercise) in workout.exercises track by $index">
+    <a href="#/workout/{{workout.id}}/{{index}}"
+       ng-class="{'exercise': true, 'current': index === currentIndex}">{{exercise.description}}</a>
+  </div>
+</div>

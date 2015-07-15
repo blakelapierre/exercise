@@ -1,0 +1,11 @@
+<div class="workouts">
+  <div ng-repeat="(index, workout) in workouts">
+    <a href="#/workout/{{workout.id}}">
+      <div class="workout">
+        {{index}} {{workout.name}}
+      </div>
+    </a>
+  </div>
+</div>
+
+<a href="#/">Front</a>

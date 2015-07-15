@@ -1,0 +1,34 @@
+player {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+  align-items: stretch;
+
+  flex: 1 1 auto;
+
+  background-color: #fff;
+
+  color: #000;
+
+  .task-list {
+    .task {
+
+      &.active {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .current-task {
+    margin: 1em;
+    padding: 1em;
+
+    border: solid 1px #fff;
+
+    .tutorial {
+      width: 100%;
+    }
+  }
+}

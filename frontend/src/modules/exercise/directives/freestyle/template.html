@@ -1,0 +1,24 @@
+<div class="left-side">
+  <div class="overview">
+    {{misc.total}}
+    <div ng-repeat="stat in analysis.stats">
+      {{stat.exercise.name}}
+      <div class="bar" ng-style="{'width': (100 * stat.count / analysis.total)+ '%'}">&nbsp;</div> {{stat.count}}
+    </div>
+  </div>
+
+  <div class="exercises">
+    <div ng-repeat="exercise in exercises">
+      <div class="exercise"
+           ng-click="click(exercise)">
+      {{exercise.name}}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="activities">
+  <div ng-repeat="activity in activities">
+    {{activity.exercise.name}}
+  </div>
+</div>

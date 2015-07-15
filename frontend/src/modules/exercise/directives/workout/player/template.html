@@ -1,0 +1,28 @@
+<h1 class="description">{{exercise.description}}</h1>
+
+<div class="time-left">{{getDuration() / 1000}} seconds!</div>
+
+<div class="task-list">
+  <div ng-repeat="(index, task) in exercise.tasks">
+    <div ng-class="{'task': true, 'active': index === currentTask.index}">{{task.quantity}}x {{task.task.description}} {{getTaskDuration(index) / 1000}} seconds!</div>
+  </div>
+</div>
+
+<div class="current-task">
+{{currentTask.index}}: {{currentTask.task.description}}
+  <iframe ng-if="currentTask.safeTutorial" class="tutorial" ng-src="{{currentTask.safeTutorial}}" frameborder="no" allowfullscreen></iframe>
+  <div class="instructions">
+    <div ng-repeat="instruction in currentTask.task.instructions">
+      {{instruction}}
+    </div>
+  </div>
+</div>
+
+{{currentTask.index + 1}} / {{tasks.length}}
+
+<div class="controls">
+  <button ng-click="prevTask()">Prev</button>
+  <button ng-click="nextTask()">Done</button>
+</div>
+
+<a href="#/workout">Workouts</a>

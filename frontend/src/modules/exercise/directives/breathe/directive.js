@@ -1,8 +1,9 @@
 module.exports = () => {
   return {
-    restrict: 'A',
+    restrict: 'E',
+    template: require('./template.html'),
     link: ($scope, element, attributes) => {
-      element.addClass('spinner');
+
     }
   };
 };

@@ -1,0 +1,47 @@
+welcome {
+  display: flex;
+  flex-direction: column;
+
+  flex: 1 1 auto;
+
+  align-items: stretch;
+  justify-content: space-between;
+
+  .intro {
+    margin: 1em auto;
+
+    span {
+      font-size: 3em;
+    }
+  }
+
+  .options {
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    flex: 1 1 auto;
+
+    a {
+      text-decoration: none;
+    }
+
+    .option {
+      padding: 1em;
+      margin: 1em;
+
+      font-size: 3em;
+      font-size: 6vw;
+
+      font-weight: bold;
+
+      border: solid 1px #aaa;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.8);
+        color: #000;
+      }
+    }
+  }
+}
