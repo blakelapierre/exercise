@@ -8,8 +8,6 @@ module.exports = () => ({
     $scope.plusOneBalloons = {};
 
     $scope.click = (exercise, count = 1) => {
-      console.log(exercise);
-
       const {plusOneBalloons} = $scope;
 
       const e = plusOneBalloons[exercise.name] = plusOneBalloons[exercise.name] || {},
@@ -34,7 +32,6 @@ module.exports = () => ({
               {stats} = analysis;
 
         return item => {
-          console.log({stats});
           const {exercise: {id}} = item,
                 exercise = exercises[id];
 
@@ -47,7 +44,6 @@ module.exports = () => ({
 
       // Calc stats
       (() => {
-        console.log('stats');
         const {analysis} = $scope,
               {stats} = analysis;
 
@@ -57,8 +53,6 @@ module.exports = () => ({
           const stat = stats[id];
 
           stat.relative = stat.count / analysis.total * 100;
-
-          console.log({stat});
         };
       })()
     ];

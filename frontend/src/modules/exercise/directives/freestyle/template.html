@@ -1,18 +1,18 @@
 <div class="left-side">
   <div class="overview">
-    {{misc.total}}
     <div ng-repeat="stat in analysis.stats"
          class="stat">
       <span class="name">{{stat.exercise.name}}</span>
       <span class="bar" ng-style="{'width': (100 * stat.count / analysis.total)+ '%'}">&nbsp;</span>
       <span class="count">{{stat.count}}</span>
     </div>
+
+    <!-- <div class="" -->
   </div>
 
   <div class="exercises">
     <div ng-repeat="exercise in exercises">
-      <div class="exercise"
-           ng-click="click(exercise);$event.stopPropagation()">
+      <div class="exercise">
         <span class="name">{{exercise.name}}</span>
         <div class="quantities">
           <div class="quantity" ng-click="click(exercise);$event.stopPropagation()">
@@ -44,9 +44,9 @@
     </div>
   </div>
 </div>
-
+<!--
 <div class="activities">
   <div ng-repeat="activity in activities">
     <span class="name">{{activity.exercise.name}}</span>
   </div>
-</div>
+</div> -->

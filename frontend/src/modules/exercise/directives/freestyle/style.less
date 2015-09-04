@@ -46,6 +46,8 @@ freestyle {
   }
 
   .overview {
+    flex: 0 0 auto;
+
     .stat {
       display: flex;
 
@@ -82,13 +84,16 @@ freestyle {
 
     flex-wrap: wrap;
 
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
 
     flex: 1 0 auto;
 
     user-select: none;
 
-    cursor: pointer;
+    margin: 1em;
+
+    cursor: default;
 
     a {
       text-decoration: none;
@@ -111,6 +116,8 @@ freestyle {
         display: flex;
 
         font-size: 0.75em;
+
+        cursor: pointer;
 
         .quantity {
           padding: 0.5em;
@@ -138,6 +145,9 @@ freestyle {
                 width: 10em;
 
                 top: -2em;
+                left: -5em;
+
+                text-align: center;
 
                 overflow: visible;
 
